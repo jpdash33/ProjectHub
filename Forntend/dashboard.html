@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/dashboard.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+
+
+    <title>ProjectHub | Dashboard</title>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="logo">
+            <img src="./img/logo.png" alt="ProjectHub logo">
+
+            <div class="brand-text">
+                <h2>ProjectHub</h2>
+                <p>All Your Projects. One Place.</p>
+            </div>
+        </div>
+
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button type="button" onclick="logout()">Logout</button>
+    </nav>
+
+
+
+    <main class="dashboard-container">
+
+        <section class="project_details">
+
+            <div class="project-card total-card" id="tot">
+                <div class="card-info">
+                    <span class="card-label">Total Projects</span>
+                    <h2 id="total-count"></h2>
+                </div>
+                <div class="card-icon">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+            </div>
+
+            <div class="status-cards">
+
+                <div class="project-card complete-card" id="done">
+                    <div class="status-top">
+                        <span class="card-label">Completed</span>
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h2 id="complete-count"></h2>
+                    <p>Successfully finished</p>
+                </div>
+
+                <div class="project-card processing-card" id="processing">
+                    <div class="status-top">
+                        <span class="card-label">In Progress</span>
+                        <i class="fa-solid fa-spinner"></i>
+                    </div>
+                    <h2 id="processing-count"></h2>
+                    <p>Currently working on</p>
+                </div>
+
+                <div class="project-card pending-card" id="pending">
+                    <div class="status-top">
+                        <span class="card-label">Pending</span>
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h2 id="pending-count"></h2>
+                    <p>Waiting to get started</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="project-manager">
+
+            <div class="manager-heading">
+                <div class="manager-title">
+                    <div class="manager-icon">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+
+                    <div>
+                        <h2>Manage Your Projects</h2>
+                        <p>Search, update, and organize your projects.</p>
+                    </div>
+                </div>
+
+                <span class="manager-badge">
+                    <i class="fa-solid fa-layer-group"></i>
+                    My Workspace
+                </span>
+            </div>
+
+            <div class="project-search">
+                <div class="search-input-wrap">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search" placeholder="Search projects by name..." autocomplete="off">
+                </div>
+
+                <button type="button" id="search-btn" onclick="search()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+            </div>
+
+            <div class="table-heading">
+                <h3>All Projects</h3>
+                <span>Manage your project details below</span>
+            </div>
+
+            <div class="project-table-wrap">
+                <table class="project-table">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="search_results">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-footer">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Manage your projects from one place.</span>
+            </div>
+
+        </section>
+
+
+
+
+
+    </main>
+
+
+
+    <div class="update-modal" id="update-modal">
+        <div class="update-box">
+            <div class="update-heading">
+                <div>
+                    <h2>Update Project</h2>
+                    <p>Modify your project details.</p>
+                </div>
+
+                <button type="button" class="close-btn" onclick="closeUpdate()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <label for="edit-name">Project Name</label>
+            <input type="text" id="edit-name">
+
+            <label for="edit-desc">Description</label>
+            <textarea id="edit-desc" rows="4"></textarea>
+
+            <label for="edit-status">Project Status</label>
+            <select id="edit-status">
+                <option value="complete">Completed</option>
+                <option value="processing">In Progress</option>
+                <option value="pending">Pending</option>
+            </select>
+
+            <div class="update-actions">
+                <button type="button" onclick="closeUpdate()">
+                    Cancel
+                </button>
+
+                <button type="button" onclick="saveUpdate()">
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div id="delete-toast" class="delete-toast">
+        <div class="delete-icon">
+            <i class="fa-solid fa-trash-can"></i>
+        </div>
+
+        <div class="delete-message">
+            <h4>Project Deleted</h4>
+            <p id="delete-toast-message">Project removed successfully.</p>
+        </div>
+    </div>
+
+
+
+
+    <script src="/eel.js"></script>
+    <script src="./JS/dashboard.js"></script>
+    <script src="./JS/funtion.js"></script>
+    <script src="./JS/dashb_search.js"></script>
+</body>
+</html>

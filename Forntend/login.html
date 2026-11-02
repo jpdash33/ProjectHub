@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+
+    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+
+    <title>ProjectHub | Welcome</title>
+</head>
+
+<body>
+
+    <main class="page-container">
+
+        <header class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-list-check"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>Project<span>Hub</span></h2>
+                <p>Project Management System</p>
+            </div>
+        </header>
+
+        <section class="login-card">
+
+            <div class="card-heading">
+                <h1>Welcome to ProjectHub</h1>
+                <p>Manage your projects, all in one place.</p>
+            </div>
+
+            <div class="login_form">
+
+                <div class="form-group">
+                    <label for="name">User Name</label>
+                    <div class="input-box">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="name"
+                            placeholder="Enter your username"
+                            autocomplete="username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mail">Email Address</label>
+                    <div class="input-box">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="mail"
+                            placeholder="you@example.com"
+                            autocomplete="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="pass"
+                            placeholder="Enter your password"
+                            autocomplete="new-password">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="c_pass">Confirm Password</label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <input type="password" id="c_pass"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    
+                    <button type="button" class="btn-primary"
+                        onclick="login()">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Continue
+                    </button>
+
+                    <button type="button" class="btn-secondary" onclick="cancel()"> Cancel </button>
+                </div>
+
+            </div>
+
+            <p class="card-footer">
+                <i class="fa-solid fa-shield-halved"></i>
+                Your workspace, organized and ready.
+            </p>
+
+        </section>
+
+        <footer class="page-footer">
+            &copy; 2026 ProjectHub. All rights reserved.
+        </footer>
+
+    </main>
+
+    <script src="/eel.js"></script>
+    <script src="./JS/login.js"></script>
+
+</body>
+</html>

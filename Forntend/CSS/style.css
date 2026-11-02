@@ -1,0 +1,139 @@
+
+:root {
+    --bg: #080e2a;
+    --card: #101a38;
+    --input: #0b1430;
+    --primary: #2684ff;
+    --primary-hover: #1672e8;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: #293654;
+    --success: #43d780;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/* Common navigation bar */
+
+nav {
+    width: 100%;
+    min-height: 78px;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #0c1531;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Brand */
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+}
+
+nav .logo img {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+nav .logo h2 {
+    color: var(--text);
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+nav .logo p {
+    margin-left: 2px;
+    color: var(--muted);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* Navigation links */
+
+nav a {
+    padding: 10px 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 7px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background: #172747;
+}
+
+/* Logout button */
+
+nav button {
+    padding: 10px 17px;
+    background: transparent;
+    color: #fca5a5;
+    border: 1px solid #653444;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+nav button:hover {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.55);
+}
+
+/* Responsive navigation */
+
+@media (max-width: 650px) {
+    nav {
+        padding: 12px 4%;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    nav .logo {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    nav .logo h2 {
+        font-size: 19px;
+    }
+
+    nav .logo p {
+        font-size: 10px;
+    }
+
+    nav a {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+
+    nav button {
+        padding: 9px 12px;
+    }
+}

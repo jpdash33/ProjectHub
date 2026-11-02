@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/home.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+
+
+    <title>ProjectHub | Home</title>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="logo">
+            <img src="./img/logo.png" alt="ProjectHub logo">
+
+            <div class="brand-text">
+                <h2>ProjectHub</h2>
+                <p>All Your Projects. One Place.</p>
+            </div>
+        </div>
+
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button type="button" onclick="logout()">Logout</button>
+    </nav>
+
+    <!-- success notification -->
+    <div id="success-toast" class="success-toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Project added successfully!</span>
+    </div>
+
+    <main class="home-container">
+
+        <section class="page-heading">
+            <div>
+                <span class="section-label">WORKSPACE</span>
+                <h1 id="wellcomw">Welcome to ProjectHub</h1>
+                <p>Keep your projects organized and track their progress.</p>
+            </div>
+        </section>
+
+        <section class="project_add">
+
+            <div class="form-heading">
+                <div class="form-icon">
+                    <i class="fa-solid fa-folder-plus"></i>
+                </div>
+
+                <div>
+                    <h2>Add a New Project</h2>
+                    <p>Enter the details below to organize your project.</p>
+                </div>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <div class="form-group">
+                <label for="p_name">Project Name</label>
+                <input type="text" id="p_name" placeholder="e.g. e-commerce Website">
+            </div>
+
+            <div class="form-group">
+                <label for="p_desc">Project Description</label>
+                <textarea id="p_desc" rows="4" placeholder="Briefly describe what this project is about..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="Status">Project Status</label>
+
+                <select id="Status" name="Status">
+                    <option value="" disabled>Select project status</option>
+                    <option value="complete">Completed</option>
+                    <option value="processing" selected>In Progress</option>
+                    <option value="pending">Pending</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-add" onclick="load()">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Project
+                </button>
+
+                <button type="button" class="btn-cancel" onclick="cancel()">
+                    Cancel
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/eel.js"></script>
+    <script src="./JS/home.js"></script>
+    <script src="./JS/funtion.js"></script>
+</body>
+</html>

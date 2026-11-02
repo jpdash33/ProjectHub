@@ -1,0 +1,258 @@
+
+:root {
+    --bg: #080e2a;
+    --card: #101a38;
+    --input: #0b1430;
+    --primary: #2684ff;
+    --primary-hover: #1672e8;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: #293654;
+    --success: #43d780;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px 20px;
+}
+
+/* Brand */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #142b50;
+    border: 1px solid #254a78;
+    border-radius: 12px;
+    color: #45a4ff;
+    font-size: 24px;
+}
+
+.brand-text h2 {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+}
+
+.brand-text h2 span {
+    color: #45a4ff;
+}
+
+.brand-text p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Main card */
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.card-heading {
+    margin-bottom: 26px;
+}
+
+.card-heading h1 {
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+.card-heading p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Form fields */
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #dbe4f0;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 46px;
+    padding: 0 13px;
+    background: var(--input);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+}
+
+.input-box i {
+    color: #8496b5;
+    font-size: 14px;
+}
+
+.input-box:focus-within {
+    border-color: var(--primary);
+}
+
+.input-box:focus-within i {
+    color: #65adff;
+}
+
+.input-box input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 0;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.input-box input::placeholder {
+    color: #697995;
+}
+
+/* Buttons */
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.form-actions button {
+    width: 100%;
+    min-height: 45px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.btn-primary {
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-primary i {
+    margin-right: 7px;
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: #cbd5e1;
+}
+
+.btn-secondary:hover {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #f87171;
+    backdrop-filter: blur(8px);
+}
+
+/* Footer */
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+.card-footer i {
+    color: var(--success);
+}
+
+.page-footer {
+    margin-top: 24px;
+    color: #71809b;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Responsive layout */
+
+@media (max-width: 480px) {
+    .page-container {
+        padding: 25px 15px;
+    }
+
+    .login-card {
+        padding: 24px 20px;
+    }
+
+    .card-heading h1 {
+        font-size: 22px;
+    }
+
+    .brand {
+        margin-bottom: 22px;
+    }
+}
